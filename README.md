@@ -18,7 +18,8 @@ $ npm install
 
 and
 
-```sh $ cd client
+```sh
+$ cd client
 $ npm install
 ```
 
