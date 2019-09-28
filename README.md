@@ -11,22 +11,13 @@ Languages used to make the project.
 
 npm install in both client and server folders
 
-```
-sh
-$
-cd
- server
+```sh $ cd server
 $ npm install
-
 ```
 
 and
 
-```
-sh
-$
-cd
- client
+```sh $ cd client
 $ npm install
 ```
 
@@ -34,21 +25,13 @@ $ npm install
 
 To start the project run npm start in server folder in one terminal and npm start in client folder in another terminal.
 
-```
-sh
-$
-cd
- server
+```sh $ cd server
 $ npm start
 ```
 
 and
 
-```
-sh
-$
-cd
- client
+```sh $ cd client
 $ npm start
 ```
 
