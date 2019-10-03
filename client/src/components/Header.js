@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
-export default function Header() {
+export default function Header(props) {
     return (
         <header className="header">
             <nav className="header-nav nav-container">
@@ -22,18 +22,22 @@ export default function Header() {
                         </NavLink>
                     </li>
                 </ul>
-                <form className="header-search">
+                <form className="header-search" onSubmit={props.onSubmit}>
                     <input
                         type="search"
                         placeholder="Search..."
                         name="search"
                         className="header-search-bar"
+                        onChange={props.searchOnChange}
                     />
-                    <input
+                    {/* <input
                         type="submit"
                         value="search"
                         className="header-button"
-                    />
+                    /> */}
+                    <button className="header-button" onClick={props.onSubmit}>
+                        submit
+                    </button>
                 </form>
             </nav>
         </header>

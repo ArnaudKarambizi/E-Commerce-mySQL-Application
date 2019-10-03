@@ -9,7 +9,11 @@ Languages used to make the project.
 
 # step 1
 
-npm install in both client and server folders
+npm install in main folder and in both client and server folders
+
+```sh
+$ npm install
+```
 
 ```sh
 $ cd server
@@ -24,6 +28,14 @@ $ npm install
 ```
 
 # step 2
+
+To start the project run npm run dev in the main folder
+
+```sh
+$ npm run dev
+```
+
+### or
 
 To start the project run npm start in server folder in one terminal and npm start in client folder in another terminal.
 

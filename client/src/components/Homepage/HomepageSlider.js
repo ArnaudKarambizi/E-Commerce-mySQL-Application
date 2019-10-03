@@ -12,20 +12,20 @@ export default function HomepageSlider() {
         <section className="homepage-slider">
             <Slider {...settings}>
                 <img
-                    src="https://images.unsplash.com/photo-1562184552-997c461abbe6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"
+                    src="https://images.pexels.com/photos/584399/living-room-couch-interior-room-584399.jpeg?cs=srgb&dl=apartment-architecture-carpet-584399.jpg&fm=jpg"
                     alt="furniture"
                     className="active"
                 />
                 <img
-                    src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+                    src="https://images.pexels.com/photos/2806355/pexels-photo-2806355.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                     alt="furniture"
                 />
                 <img
-                    src="https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1949&q=80"
+                    src="https://images.pexels.com/photos/2806351/pexels-photo-2806351.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260"
                     alt="furniture"
                 />
                 <img
-                    src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
+                    src="https://images.pexels.com/photos/1090092/pexels-photo-1090092.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260z"
                     alt="furniture"
                 />
             </Slider>

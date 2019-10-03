@@ -1,11 +1,21 @@
 import React from "react";
 import Card from "../Card";
-import furnitures from "../../assets/furniture.json";
+// import furnitures from "../../assets/furniture.json";
 import ProductFilter from "./ProductFilter";
 export default function ProductPage(props) {
     //1.EXTRACTING PRODUCTS FROM ARRAY into different VARIABLES using destructuring
 
-    const { chairs, sofas, tables } = furnitures;
+    // const { chairs, sofas, tables } = props.furnituresArray;
+    let chairs = props.furnituresArray.filter(
+        item => item.Product_Category === "chair"
+    );
+    let sofas = props.furnituresArray.filter(
+        item => item.Product_Category === "sofa"
+    );
+    let tables = props.furnituresArray.filter(
+        item => item.Product_Category === "table"
+    );
+    console.log("chairs", props.furnituresArray);
 
     // 4. FILTERING PRODUCTS BY FURNITURE TYPE
 
@@ -22,6 +32,9 @@ export default function ProductPage(props) {
             {/* PASSING  SELECTfILTER INTO PROP  to productFilter component */}
 
             <ProductFilter selectFilter={props.selectFilter} />
+
+            <button onClick={props.getProducts}>show all products</button>
+
             <div className="product-container">
                 <section
                     className={`chair ${filter(props.selectValue, "chair")}`}

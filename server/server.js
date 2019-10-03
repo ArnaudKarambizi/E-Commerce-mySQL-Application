@@ -28,15 +28,20 @@ connection.connect(function(err) {
     if (err) throw err;
 });
 
+//connection.end();
+
 app.get("/api/products", (req, res) => {
     let sql = "SELECT * FROM products";
+
+    // let sql =
+    //     "SELECT * FROM products INNER JOIN PRICES ON products.ProductId=PRICES.ID;";
     connection.query(sql, (err, results) => {
         if (err) throw err;
         res.json(results);
     });
 });
 
-app.get("/api/productfilter/:query", (req, res) => {
+app.get("/api/productFilter/:query", (req, res) => {
     let sql = "SELECT * FROM products";
     let query = req.params.query;
 
@@ -48,7 +53,11 @@ app.get("/api/productfilter/:query", (req, res) => {
             for (const key in product) {
                 if (product.hasOwnProperty(key)) {
                     const productValue = product[key];
-                    if (productValue == query) {
+                    console.log();
+                    if (
+                        productValue == query ||
+                        String(productValue).includes(query)
+                    ) {
                         return product;
                     }
                 }

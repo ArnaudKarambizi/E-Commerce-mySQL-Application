@@ -3,11 +3,30 @@
      ===========*/
 
 .home {
+  font-family: Proxima Nova W01, Helvetica, Arial, sans-serif;
   text-align: center;
-  /* white-space: pre; */
+  line-break: auto;
   text-transform: capitalize;
   line-height: 32px;
+  letter-spacing: .08em;
+  font-size: 1em;
 }
+
+.home h1 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  letter-spacing: .08em;
+}
+
+.home h2 {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  letter-spacing: .08em;
+}
+
+/* .home-image {
+
+  background-color: blue;
+} */
+
 
 ul {
   margin: 0;
@@ -16,6 +35,7 @@ ul {
 }
 
 .nav-container {
+  padding: 4px;
   width: 90%;
   margin: 0 auto;
 }
@@ -169,7 +189,7 @@ ul {
 
 .footer {
   margin-top: 30px;
-  padding: 50px 0;
+  padding: 16px 0;
   background-color: rgba(0, 0, 0, 0.794);
   color: #fff;
   text-align: center;

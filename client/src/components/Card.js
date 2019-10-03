@@ -3,13 +3,18 @@ import React from "react";
 export default function Card(props) {
     // PRODUCTS PROP destructuring;
 
-    const { image, name, price, description } = props.productsProp;
+    const {
+        Product_image,
+        ProductName,
+        price,
+        Product_Description
+    } = props.productsProp;
     return (
         <article className="card">
-            <img src={image} alt={name} />
-            <h2>{name}</h2>
+            <img src={Product_image} alt={ProductName} />
+            <h2>{ProductName}</h2>
             <p className="card-price">{price}</p>
-            <p className="card-description">{description}</p>
+            <p className="card-description">{Product_Description}</p>
             <p>
                 <button>Add to Cart</button>
             </p>

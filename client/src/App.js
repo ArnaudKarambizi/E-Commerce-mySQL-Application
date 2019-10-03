@@ -12,7 +12,10 @@ export default class App extends Component {
     // APP STATE
 
     state = {
-        selectValue: "default"
+        selectValue: "default",
+        inputValue: "",
+        furnituresArray: [],
+        furnitures: []
     };
 
     // mounted() {
@@ -21,14 +24,26 @@ export default class App extends Component {
     //     });
     // }
     componentDidMount() {
-        fetch(`http://localhost:5000/api/products`)
+        this.getProducts();
+    }
+
+    getProducts = () => {
+        fetch(`/api/products`)
             .then(response => {
                 return response.json();
             })
             .then(data => {
-                console.log("data", data);
+                this.setState({
+                    furnituresArray: data,
+                    furnitures: data
+                });
+                // console.log(
+                //     "furnitures array",
+                //     this.state.furnituresArray,
+                //     data
+                // );
             });
-    }
+    };
 
     // UPDATING STATE
 
@@ -38,10 +53,35 @@ export default class App extends Component {
         });
     };
 
+    searchOnChange = e => {
+        this.setState({
+            inputValue: e.target.value
+        });
+    };
+
+    onSubmit = e => {
+        e.preventDefault();
+        let filterLink = `/api/productfilter/${this.state.inputValue}`;
+        fetch(filterLink)
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                if (data.length > 0) {
+                    this.setState({
+                        furnituresArray: data
+                    });
+                }
+            });
+    };
+
     render() {
         return (
             <Router>
-                <Header />
+                <Header
+                    onSubmit={this.onSubmit}
+                    searchOnChange={this.searchOnChange}
+                />
                 <main className="main">
                     <Route path="/" exact component={Homepage} />
                     <Route path="/contact" component={ContactPage} />
@@ -50,9 +90,10 @@ export default class App extends Component {
                         component={() => (
                             <ProductPage
                                 // ******* passing state in  productPage component as props ***
-
+                                furnituresArray={this.state.furnituresArray}
                                 selectValue={this.state.selectValue}
                                 selectFilter={this.selectFilter}
+                                getProducts={this.getProducts}
                             />
                         )}
                     />
