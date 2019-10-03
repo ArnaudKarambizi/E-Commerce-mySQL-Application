@@ -5,7 +5,6 @@ import ProductFilter from "./ProductFilter";
 export default function ProductPage(props) {
     //1.EXTRACTING PRODUCTS FROM ARRAY into different VARIABLES using destructuring
 
-    // const { chairs, sofas, tables } = props.furnituresArray;
     let chairs = props.furnituresArray.filter(
         item => item.Product_Category === "chair"
     );

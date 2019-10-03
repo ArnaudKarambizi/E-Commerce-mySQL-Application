@@ -9,7 +9,8 @@ import ProductPage from "./components/ProductPage/ProductPage";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 export default class App extends Component {
-    // APP STATE
+    /* Initializing state  with an empty furnitures array 
+    this will filled with  products data in the backend*/
 
     state = {
         selectValue: "default",
@@ -18,11 +19,8 @@ export default class App extends Component {
         furnitures: []
     };
 
-    // mounted() {
-    //     fetch("localhost:5000/employees").then(response => {
-    //         return console.log(response);
-    //     });
-    // }
+    //Fetching data from the node server
+
     componentDidMount() {
         this.getProducts();
     }
@@ -37,11 +35,6 @@ export default class App extends Component {
                     furnituresArray: data,
                     furnitures: data
                 });
-                // console.log(
-                //     "furnitures array",
-                //     this.state.furnituresArray,
-                //     data
-                // );
             });
     };
 

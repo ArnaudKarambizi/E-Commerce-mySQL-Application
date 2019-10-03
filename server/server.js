@@ -1,4 +1,9 @@
+/*==== LOADING .ENV FILE WITH PASSWORD CREATED IN THE ROOT DIRECTORY */
+
 require("dotenv").config();
+
+/* ACCESSING MySQL database with Node.js IMPORTING a MySQL driver IN THE SERVER FILE*/
+
 let mysql = require("mysql");
 const PORT = 5000;
 const express = require("express");
@@ -14,12 +19,15 @@ app.use((req, res, next) => {
 app.use(morgan("common"));
 app.use(helmet());
 
-// first create your database and table and populate
-// it with some data
+/*CREATING A VARIABLE  NAMED CONNECTION */
+
 var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
     user: "root",
+
+    /*PROCESS.ENV OBJECT*/
+
     password: process.env.MYPASSWORD,
     database: "ecommerceSite_db"
 });
@@ -30,16 +38,21 @@ connection.connect(function(err) {
 
 //connection.end();
 
+/************* =====API ENDPOINTS ====== */
+
+app.get("/", (req, res) => {
+    res.send("HELLO WORLD");
+});
 app.get("/api/products", (req, res) => {
     let sql = "SELECT * FROM products";
 
-    // let sql =
-    //     "SELECT * FROM products INNER JOIN PRICES ON products.ProductId=PRICES.ID;";
     connection.query(sql, (err, results) => {
         if (err) throw err;
         res.json(results);
     });
 });
+
+/*FETCHING PRODUCTS DATA FROM MYSQL DATABASE USING  THE GET METHOD */
 
 app.get("/api/productFilter/:query", (req, res) => {
     let sql = "SELECT * FROM products";
@@ -50,17 +63,10 @@ app.get("/api/productFilter/:query", (req, res) => {
         let products = JSON.stringify(results);
         let productsArray = JSON.parse(products);
         let filterResults = productsArray.filter(product => {
-            for (const key in product) {
-                if (product.hasOwnProperty(key)) {
-                    const productValue = product[key];
-                    console.log();
-                    if (
-                        productValue == query ||
-                        String(productValue).includes(query)
-                    ) {
-                        return product;
-                    }
-                }
+            if (
+                product.ProductName.toLowerCase().includes(query.toLowerCase())
+            ) {
+                return product;
             }
         });
         res.send(filterResults);
@@ -78,3 +84,6 @@ app.get("/api/contacts", (req, res) => {
 app.listen(PORT, function() {
     console.log(`Server listening on port ${PORT}!`);
 });
+/*======= EXPORTING  EXPRESS APP  TO TEST.JS ====*/
+
+module.exports = app;

@@ -5,6 +5,13 @@ Languages used to make the project.
 -   React.js
 -   Node.js
 
+Packages npm packages used.
+
+-   helmet
+-   morgan
+-   express
+-   concurrently
+
 ## Quick Start
 
 # step 1
