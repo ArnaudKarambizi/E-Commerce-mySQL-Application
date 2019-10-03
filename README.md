@@ -1,11 +1,11 @@
-# REACT ECOMMERCE
+# REACT ECOMMERCE SITE
 
 Languages used to make the project.
 
 -   React.js
 -   Node.js
 
-Packages npm packages used.
+npm packages used.
 
 -   helmet
 -   morgan
