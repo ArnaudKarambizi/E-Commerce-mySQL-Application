@@ -15,7 +15,9 @@ describe("app", () => {
 
         it("returns all the products data", done => {
             chai.request(app)
+
                 .get("/api/products")
+
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.body.should.be.a("array");
@@ -24,7 +26,9 @@ describe("app", () => {
         });
         it("returns filtered products data ", done => {
             chai.request(app)
+
                 .get("/api/productFilter/:query ")
+
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.body.should.be.a("array");
@@ -34,7 +38,9 @@ describe("app", () => {
 
         it(" returns contact data", done => {
             chai.request(app)
+
                 .get("/api/contacts ")
+
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.body.should.be.a("array");
@@ -44,10 +50,13 @@ describe("app", () => {
 
         it("returns the homepage", done => {
             chai.request(app)
+
                 .get("/")
+
                 .end((err, res) => {
                     res.should.have.status(200);
                     res.body.should.be.a("object");
+
                     done();
                 });
         });

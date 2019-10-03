@@ -17,6 +17,7 @@ app.use((req, res, next) => {
 });
 
 app.use(morgan("common"));
+
 app.use(helmet());
 
 /*CREATING A VARIABLE  NAMED CONNECTION */
@@ -26,7 +27,7 @@ var connection = mysql.createConnection({
     port: 3306,
     user: "root",
 
-    /*PROCESS.ENV OBJECT*/
+    /*PROCESS.ENV OBJECT THAT TAKES MY PASSWORD MYSQL WORKBENCH DATABASE*/
 
     password: process.env.MYPASSWORD,
     database: "ecommerceSite_db"
@@ -43,6 +44,7 @@ connection.connect(function(err) {
 app.get("/", (req, res) => {
     res.send("HELLO WORLD");
 });
+
 app.get("/api/products", (req, res) => {
     let sql = "SELECT * FROM products";
 
@@ -84,6 +86,7 @@ app.get("/api/contacts", (req, res) => {
 app.listen(PORT, function() {
     console.log(`Server listening on port ${PORT}!`);
 });
+
 /*======= EXPORTING  EXPRESS APP  TO TEST.JS ====*/
 
 module.exports = app;

@@ -1,10 +1,13 @@
 import React from "react";
 
+/* == CREATING  STATELSS REACT COMPONENT FOR THE CONTACT FORM ====== */
+
 export default function ContactForm() {
     return (
         <form className="contact-form" action="#">
             <div className="contact-names">
                 <label htmlFor="firstName">First Name </label>
+
                 <input
                     type="text"
                     name="FirstName"
@@ -14,6 +17,7 @@ export default function ContactForm() {
                 />
 
                 <label htmlFor="LastName">Last Name </label>
+
                 <input
                     type="text"
                     name="LastName"
@@ -24,6 +28,7 @@ export default function ContactForm() {
             </div>
             <div className="contact-email">
                 <label htmlFor="email"> Email Address </label>
+
                 <input
                     type="email"
                     name="email"
@@ -32,8 +37,10 @@ export default function ContactForm() {
                     required
                 />
             </div>
+
             <div className="contact-phone">
                 <label htmlFor="phone">Phone Number</label>
+
                 <input
                     type="text"
                     name="phone"
@@ -41,6 +48,7 @@ export default function ContactForm() {
                     placeholder="Phone Number"
                 />
             </div>
+
             <div className="contact-comment">
                 <label htmlFor="comment">Comment </label>
                 <textarea id="comment" required />

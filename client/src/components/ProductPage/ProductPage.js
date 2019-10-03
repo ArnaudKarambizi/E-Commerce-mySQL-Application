@@ -32,7 +32,9 @@ export default function ProductPage(props) {
 
             <ProductFilter selectFilter={props.selectFilter} />
 
-            <button onClick={props.getProducts}>show all products</button>
+            <button className="allproducts" onClick={props.getProducts}>
+                show all products
+            </button>
 
             <div className="product-container">
                 <section
