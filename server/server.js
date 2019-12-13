@@ -5,7 +5,7 @@ require("dotenv").config();
 /* ACCESSING MySQL database with Node.js IMPORTING a MySQL driver IN THE SERVER FILE*/
 
 let mysql = require("mysql");
-const PORT = 5000;
+const PORT = 6000;
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
@@ -66,7 +66,7 @@ app.get("/api/productFilter/:query", (req, res) => {
         let productsArray = JSON.parse(products);
         let filterResults = productsArray.filter(product => {
             if (
-                product.ProductName.toLowerCase().includes(query.toLowerCase())
+                product.Product_name.toLowerCase().includes(query.toLowerCase())
             ) {
                 return product;
             }

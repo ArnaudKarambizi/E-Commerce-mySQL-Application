@@ -8,25 +8,30 @@
   line-break: auto;
   text-transform: capitalize;
   line-height: 32px;
-  letter-spacing: .08em;
+  letter-spacing: 0.08em;
   font-size: 1em;
 }
 
 .home h1 {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  letter-spacing: .08em;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  letter-spacing: 0.08em;
 }
 
 .home h2 {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  letter-spacing: .08em;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  letter-spacing: 0.08em;
+}
+
+.slick-dots li button:before {
+  font-size: 36px;
 }
 
 /* .home-image {
 
   background-color: blue;
 } */
-
 
 ul {
   margin: 0;
@@ -88,17 +93,16 @@ ul {
        SLIDESHOW
   ========================*/
 
-
 /* =======================
       PRODUCTS
     ============= */
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
+  max-width: 370px;
   text-align: center;
   font-family: arial;
+  margin: auto;
 }
 
 .price {
@@ -125,14 +129,6 @@ ul {
 .card img {
   width: 100%;
   height: 300px;
-}
-
-.chair,
-.sofa,
-.table {
-  display: flex;
-  flex-wrap: wrap;
-  align-content: flex-start;
 }
 
 .card-description {
@@ -253,6 +249,18 @@ ul {
   .footer {
     text-align: left;
   }
+
+  .chair,
+  .sofa,
+  .table {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .card {
+    margin: 0;
+  }
 }
 
 /* ==============
@@ -260,10 +268,10 @@ ul {
   ================*/
 
 @media only screen and (min-width: 1540px) {
+
   /*============== 
       CONTAINER
       ================ */
-
   .container {
     width: 1300px;
     background-color: grey;
@@ -275,8 +283,6 @@ ul {
   margin-top: 10px;
 }
 
-;
-
 .allproducts {
-  background-color: 'blue'
+  background-color: "blue";
 }
